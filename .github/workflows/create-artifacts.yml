@@ -15,9 +15,11 @@ jobs:
         run: |
           sudo apt-get -y -qq install software-properties-common dirmngr apt-transport-https lsb-release ca-certificates xvfb
           sudo apt-get install -y curl wget
-          sudo touch /etc/apt/sources.list.d/openscad.list
+          # sudo touch /etc/apt/sources.list.d/openscad.list
+      # - run: |
+          # sudo echo "deb https://download.opensuse.org/repositories/home:/t-paul/xUbuntu_20.04/ ./" >> /etc/apt/sources.list.d/openscad.list
       - run: |
-          sudo echo "deb https://download.opensuse.org/repositories/home:/t-paul/xUbuntu_20.04/ ./" >> /etc/apt/sources.list.d/openscad.list
+          echo "deb https://download.opensuse.org/repositories/home:/t-paul/xUbuntu_20.04/ ./" | sudo tee –a /etc/apt/sources.list.d/openscad.list
       - run: |
           wget -qO - https://files.openscad.org/OBS-Repository-Key.pub | apt-key add -
       - run: |
