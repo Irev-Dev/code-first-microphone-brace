@@ -1,0 +1,29 @@
+name: create artifacts
+on:
+  pull_request:
+  push:
+    tags:
+    - '*'
+
+jobs:
+  create-artifacts:
+    runs-on: ubuntu-latest
+    name: create artifacts
+    steps:
+      - uses: actions/checkout@v3
+      - name: install openscad-nightly
+        run: |
+          apt-get -y -qq install software-properties-common dirmngr apt-transport-https lsb-release ca-certificates xvfb imagemagick unzip inkscape
+          apt-get install -y curl wget
+          touch /etc/apt/sources.list.d/openscad.list
+          echo "deb https://download.opensuse.org/repositories/home:/t-paul/xUbuntu_20.04/ ./" >> /etc/apt/sources.list.d/openscad.list
+          wget -qO - https://files.openscad.org/OBS-Repository-Key.pub | apt-key add -
+          apt-get update -qq
+          apt-get install -y openscad-nightly
+      - name: create stl
+        run: xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.stl -P default ./demo-thing.scad
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "./output.stl"
+          # bodyFile: "body.md"
+          token: ${{ secrets.GITHUB_TOKEN }}
