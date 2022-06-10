@@ -21,7 +21,7 @@ jobs:
       - run: |
           echo "deb https://download.opensuse.org/repositories/home:/t-paul/xUbuntu_20.04/ ./" | sudo tee –a /etc/apt/sources.list.d/openscad.list
       - run: |
-          wget -qO - https://files.openscad.org/OBS-Repository-Key.pub | apt-key add -
+          wget -qO - https://files.openscad.org/OBS-Repository-Key.pub | sudo apt-key add -
       - run: |
           sudo apt-get update -qq
       - run: |
@@ -31,5 +31,4 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "./output.stl"
-          # bodyFile: "body.md"
           token: ${{ secrets.GITHUB_TOKEN }}
