@@ -16,9 +16,13 @@ jobs:
           sudo apt-get -y -qq install software-properties-common dirmngr apt-transport-https lsb-release ca-certificates xvfb
           sudo apt-get install -y curl wget
           sudo touch /etc/apt/sources.list.d/openscad.list
+      - run: |
           sudo echo "deb https://download.opensuse.org/repositories/home:/t-paul/xUbuntu_20.04/ ./" >> /etc/apt/sources.list.d/openscad.list
+      - run: |
           wget -qO - https://files.openscad.org/OBS-Repository-Key.pub | apt-key add -
+      - run: |
           sudo apt-get update -qq
+      - run: |
           sudo apt-get install -y openscad-nightly
       - name: create stl
         run: xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.stl -P default ./demo-thing.scad
