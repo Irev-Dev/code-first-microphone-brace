@@ -11,13 +11,7 @@ jobs:
     name: create artifacts
     steps:
       - uses: actions/checkout@v3
-      - name: install openscad-nightly
-        run: |
-          sudo apt-get -y -qq install software-properties-common dirmngr apt-transport-https lsb-release ca-certificates xvfb wget
-          echo "deb https://download.opensuse.org/repositories/home:/t-paul/xUbuntu_20.04/ ./" | sudo tee -a /etc/apt/sources.list.d/openscad.list
-          wget -qO - https://files.openscad.org/OBS-Repository-Key.pub | sudo apt-key add -
-          sudo apt-get update -qq
-          sudo apt-get install -y openscad-nightly
+      - uses: Irev-Dev/action-install-openscad-nightly@v0.0.1
       - name: create stl
         run: xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.stl -P default --export-format "asciistl" ./demo-thing.scad
       - uses: KittyCAD/install-cli@v0.0.4
