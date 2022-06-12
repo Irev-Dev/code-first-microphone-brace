@@ -22,6 +22,7 @@ jobs:
         env: 
           KITTYCAD_API_TOKEN: ${{ secrets.KITTYCAD_API_TOKEN }}
       - uses: ncipollo/release-action@v1
+        if: startsWith(github.ref, 'refs/tags/v')
         with:
           artifacts: "./output.stl, ./output.obj"
           token: ${{ secrets.GITHUB_TOKEN }}
