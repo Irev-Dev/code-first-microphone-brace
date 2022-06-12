@@ -27,7 +27,7 @@ jobs:
       - run: |
           sudo apt-get install -y openscad-nightly
       - name: create stl
-        run: xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.stl -P default --export-format "binstl" ./demo-thing.scad
+        run: xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.stl -P default --export-format "asciistl" ./demo-thing.scad
       - uses: KittyCAD/install-cli@v0.0.4
       - name: convert
         run: |
