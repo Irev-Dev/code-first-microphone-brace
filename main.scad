@@ -3,19 +3,21 @@ include <lib/polyround.scad> // make sure you run dependencies.sh
 $fn=30;
 
 mountInset=4;
-insetToMonitorBottom=152;
+insetToMonitorBottom=150;
 mountClearance=5;
 mountHoleDiameter=3;
 mountHoleDistance=100;
-micDiameter=65;
+micDiameter=67;
 mountWidth=20;
 
 screwDiameter=4;
 screwHeadDiameter=8;
 minThickness=1.5;
 cuffThickness=3;
-cuffHeight=40;
+cuffHeight=50;
 tiny=0.05;
+
+microphoneScrewDiameter=6;
 
 bottom= -mountHoleDistance-mountClearance-insetToMonitorBottom;
 
@@ -52,20 +54,39 @@ module CuffBrace () {
     translate(translateCuff){
         $fn=50;
         difference(){
-            linear_extrude(cuffHeight)offset(cuffThickness/2+tiny)offset(-(cuffThickness/3+tiny))difference() {
-                circle(d=micDiameter);
-                circle(d=micDiameter-cuffThickness*2);
-                translate([-micDiameter-15,-micDiameter/2])square([micDiameter, micDiameter]);
-                translate([-micDiameter,-micDiameter-15])square([micDiameter*2, micDiameter]);
+            union() {
+                rotate([0,0,-45])
+                    translate([0,micDiameter/2-2,microphoneScrewDiameter+offset])rotate([-90,0,0])
+                        cylinder(d1=microphoneScrewDiameter+12, d2=microphoneScrewDiameter+5, h=cuffThickness/2+5);
+                linear_extrude(cuffHeight)offset(cuffThickness/2+tiny)offset(-(cuffThickness/3+tiny))
+                    difference() {
+                        circle(d=micDiameter);
+                        circle(d=micDiameter-cuffThickness*2);
+                        translate([-micDiameter-15,-micDiameter/2]) 
+                            square([micDiameter, micDiameter]);
+                        translate([-micDiameter,-micDiameter-15])
+                            square([micDiameter*2, micDiameter]);
 
+                    }
             }
-            rotate([0,0,-45])translate([0,-100,screwDiameter])rotate([-90,0,0])cylinder(d=screwDiameter, h=200);
-            rotate([0,0,45])translate([0,0,screwDiameter])rotate([-90,0,0])cylinder(d=30, h=200);
+            offset=10;
+            rotate([0,0,-45])
+                translate([0,-100,microphoneScrewDiameter+offset])
+                    rotate([-90,0,0])
+                        cylinder(d=microphoneScrewDiameter, h=200);
+            rotate([0,0,45])
+                translate([0,0,microphoneScrewDiameter+offset])
+                    rotate([-90,0,0])
+                        cylinder(d=30, h=200);
         }
     } 
 }
 
-CuffBrace();
+union() {
+    CuffBrace();
 
-BraceBody();
+    BraceBody();
+    translate([0,-7,mountWidth-0.3])cylinder(d=20, h=0.3);
+    translate([30,-295,mountWidth-0.3])cylinder(d=20, h=0.3);
+}
 
