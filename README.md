@@ -1,6 +1,8 @@
-# Monitor brace thing 🤷
+# Microphone brace
 
 This repo is first of all a demo of a Code-first CAD pipline, and secondly is a brace for my microphone (needed something to demo).
+
+![mic-photos](https://user-images.githubusercontent.com/29681384/173442178-0a78c227-26d1-4d2c-9fea-c7a23319518f.png)
 
 ![output](https://github.com/Irev-Dev/playground/releases/latest/download/output.png)
 
