@@ -14,8 +14,11 @@ jobs:
       - uses: Irev-Dev/action-install-openscad-nightly@v0.0.1
       - name: create stl
         run: |
-          xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.stl --export-format "asciistl" ./demo-thing.scad
-          xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.png --imgsize=1000,300 --camera=-0.4,1.3,2.5,68,0,58,39 ./demo-thing.scad
+          xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.stl --export-format "asciistl" ./main.scad
+      - name: capture image # artifacts in preview, capturing image of stl is more robust
+        run: |
+          echo "import("output.stl", convexity=3);" > output.scad
+          xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.png --viewall --imgsize=1000,300 --camera=11,-153,-2,238,0,296,400 ./output.scad
       - uses: KittyCAD/install-cli@v0.0.4
       - name: convert
         run: |
