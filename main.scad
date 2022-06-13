@@ -39,7 +39,7 @@ module BraceBody() {
         [mountInset+20,bottom-micDiameter/2,0],
     ];
     difference(){
-        polyRoundExtrude(radiiPoints, mountWidth, 3, 3 ,fn=30);
+        polyRoundExtrude(radiiPoints, mountWidth, 1, 3 ,fn=30);
         translate(translateCuff)cylinder(d=micDiameter-cuffThickness*2, h=100);
         translate([minThickness,0,mountWidth-screwDiameter-1.1]){
             translate([0,-mountClearance,0])ScrewHole();
