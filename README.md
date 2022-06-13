@@ -4,7 +4,7 @@ This repo is first of all a demo of a Code-first CAD pipline, and secondly is a 
 
 ![mic-photos](https://user-images.githubusercontent.com/29681384/173442178-0a78c227-26d1-4d2c-9fea-c7a23319518f.png)
 
-![output](https://github.com/Irev-Dev/playground/releases/latest/download/output.png)
+![output](https://github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.png)
 
 ## Code-first?
 
@@ -16,15 +16,15 @@ The source of truth for our brace is in `main.scad`. It uses [OpenSCAD](https://
 
 When changes are made to `main.scad` a github workflow is triggered that outputs our part as an STL and also generates a screen shot, then [KittyCAD](https://kittycad.io/) is used to convert to obj and step files.
 
-Lastly all of these file are added to a [Github release](https://github.com/Irev-Dev/playground/releases). Meaning that we have we also get a history of how the output files have changes. We can also point to the latest release so that our documentation always stays up-to-date, i.e. this README has links for the lastest files
+Lastly all of these file are added to a [Github release](https://github.com/Irev-Dev/code-first-microphone-brace/releases). Meaning that we have we also get a history of how the output files have changes. We can also point to the latest release so that our documentation always stays up-to-date, i.e. this README has links for the lastest files
 
-- [stl](github.com/Irev-Dev/playground/releases/latest/download/output.stl)
-- [step](github.com/Irev-Dev/playground/releases/latest/download/output.step)
-- [obj](github.com/Irev-Dev/playground/releases/latest/download/output.obj)
+- [stl](github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.stl)
+- [step](github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.step)
+- [obj](github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.obj)
 
 And the rendered image above will also automatically update as changes are made to `main.scad`.
 
-Have a look at [the workflow](https://github.com/Irev-Dev/playground/blob/main/.github/workflows/create-artifacts.yml) for the details.
+Have a look at [the workflow](https://github.com/Irev-Dev/code-first-microphone-brace/blob/main/.github/workflows/create-artifacts.yml) for the details.
 
 ## Is there more CAD automation you would like?
 
