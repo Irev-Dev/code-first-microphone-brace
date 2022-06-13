@@ -3,7 +3,7 @@ include <lib/polyround.scad> // make sure you run dependencies.sh
 $fn=30;
 
 mountInset=4;
-insetToMonitorBottom=150;
+insetToMonitorBottom=152;
 mountClearance=5;
 mountHoleDiameter=3;
 mountHoleDistance=100;
@@ -56,9 +56,11 @@ module CuffBrace () {
                 circle(d=micDiameter);
                 circle(d=micDiameter-cuffThickness*2);
                 translate([-micDiameter-15,-micDiameter/2])square([micDiameter, micDiameter]);
+                translate([-micDiameter,-micDiameter-15])square([micDiameter*2, micDiameter]);
 
             }
-            translate([0,-100,screwDiameter])rotate([-90,0,0])cylinder(d=screwDiameter, h=200);
+            rotate([0,0,-45])translate([0,-100,screwDiameter])rotate([-90,0,0])cylinder(d=screwDiameter, h=200);
+            rotate([0,0,45])translate([0,0,screwDiameter])rotate([-90,0,0])cylinder(d=30, h=200);
         }
     } 
 }
