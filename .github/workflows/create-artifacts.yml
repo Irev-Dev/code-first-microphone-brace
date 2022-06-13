@@ -19,7 +19,7 @@ jobs:
       - name: capture image # artifacts in preview, capturing image of stl is more robust
         run: |
           echo 'import("output.stl", convexity=3);' > output.scad
-          xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.png --viewall --imgsize=1000,300 --camera=11,-153,-2,238,0,296,400 ./output.scad
+          xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24" openscad-nightly -o ./output.png --imgsize=1000,300 --colorscheme BeforeDawn --camera=11,-153,-2,238,0,296,400 ./output.scad
       - uses: KittyCAD/install-cli@v0.0.4
       - name: convert
         run: |
