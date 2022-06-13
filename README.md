@@ -18,9 +18,9 @@ When changes are made to `main.scad` a github workflow is triggered that outputs
 
 Lastly all of these file are added to a [Github release](https://github.com/Irev-Dev/code-first-microphone-brace/releases). Meaning that we have we also get a history of how the output files have changes. We can also point to the latest release so that our documentation always stays up-to-date, i.e. this README has links for the lastest files
 
-- [stl](github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.stl)
-- [step](github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.step)
-- [obj](github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.obj)
+- [stl](https://github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.stl)
+- [step](https://github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.step)
+- [obj](https://github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.obj)
 
 And the rendered image above will also automatically update as changes are made to `main.scad`.
 
