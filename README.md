@@ -16,7 +16,7 @@ The source of truth for our brace is in `main.scad`. It uses [OpenSCAD](https://
 
 When changes are made to `main.scad` a github workflow is triggered that outputs our part as an STL and also generates a screen shot, then [KittyCAD](https://kittycad.io/) is used to convert to obj and step files.
 
-Lastly all of these file are added to a [Github release](https://github.com/Irev-Dev/code-first-microphone-brace/releases). Meaning that we have we also get a history of how the output files have changes. We can also point to the latest release so that our documentation always stays up-to-date, i.e. this README has links for the lastest files
+Lastly all of these file are added to a [Github release](https://github.com/Irev-Dev/code-first-microphone-brace/releases). Meaning that we also get a history of how the output files have changed. We can also point to the latest release so that our documentation always stays up-to-date, i.e. this README has links for the lastest files
 
 - [⬇️ stl](https://github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.stl)
 - [⬇️ step](https://github.com/Irev-Dev/code-first-microphone-brace/releases/latest/download/output.step)
