@@ -31,7 +31,7 @@ Have a look at [the workflow](https://github.com/Irev-Dev/playground/blob/main/.
 Aside from producing STLs and STEP files etc, the code-first paradigm lends itself to automatically producing BOMs, or running FEM and other simulations on parts as part of a pipeline, saving countless hours of re-work which is typical with GUI CAD packages.
 
 If you're interested in this paradigm here are some links:
-- [KittyCAD](https://kittycad.io/) is bulding Code-First APIs for hardware teams, and aim's is to make Code-First dream a reality.
+- [KittyCAD](https://kittycad.io/) is bulding Code-First APIs for hardware teams, and aim's is to make Code-First dream a reality. Read one of the co-founder's break down of the [history of CAD](https://medium.com/embedded-ventures/mechanical-cad-yesterday-today-and-tomorrow-981cef7e06b1).
 - [Splitflap](https://github.com/scottbez1/splitflap) is another project that Leverages OpenSCAD as part of Github actions.
 - The [OpenFlexure microscope](https://gitlab.com/openflexure/openflexure-microscope) also uses OpenSCAD in CI/CD pipelines, as well as the team publishing ["HardOps: utilising the software development toolchain for hardware design"](https://www.tandfonline.com/doi/full/10.1080/0951192X.2022.2028188)
 
