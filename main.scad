@@ -39,7 +39,7 @@ module BraceBody() {
         [mountInset+20,bottom-micDiameter/2,0],
     ];
     difference(){
-        polyRoundExtrude(radiiPoints, mountWidth, 2, 3 ,fn=30);
+        polyRoundExtrude(radiiPoints, mountWidth, 2, 3 ,fn=8);
         translate(translateCuff)cylinder(d=micDiameter-cuffThickness*2, h=100);
         translate([minThickness,0,mountWidth-screwDiameter-1.1]){
             translate([0,-mountClearance,0])ScrewHole();
@@ -50,7 +50,7 @@ module BraceBody() {
 
 module CuffBrace () {
     translate(translateCuff){
-        $fn=200;
+        $fn=50;
         difference(){
             linear_extrude(cuffHeight)offset(cuffThickness/2+tiny)offset(-(cuffThickness/3+tiny))difference() {
                 circle(d=micDiameter);
