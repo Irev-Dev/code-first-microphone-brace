@@ -31,7 +31,7 @@ Aside from producing STLs and STEP files etc, the code-first paradigm lends itse
 If you're interested in this paradigm here are some links:
 - [KittyCAD](https://kittycad.io/) is bulding Code-First APIs for hardware teams, and aim's is to make Code-First dream a reality.
 - [Splitflap](https://github.com/scottbez1/splitflap) is another project that Leverages OpenSCAD as part of Github actions.
-- The [OpenFlexure microscope](https://gitlab.com/openflexure/openflexure-microscope) also uses OpenSCAD in CI/CD pipelines, as well as the team publishing ["HardOps: utilising the software development toolchain for hardware design"]([https://www.nature.com/articles/s41592-022-01484-5](https://www.tandfonline.com/doi/full/10.1080/0951192X.2022.2028188)
+- The [OpenFlexure microscope](https://gitlab.com/openflexure/openflexure-microscope) also uses OpenSCAD in CI/CD pipelines, as well as the team publishing ["HardOps: utilising the software development toolchain for hardware design"](https://www.tandfonline.com/doi/full/10.1080/0951192X.2022.2028188)
 
 ## Building
 
